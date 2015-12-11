@@ -111,6 +111,17 @@ public class TicTacToe {
         else {
             currentPlayerMark = 'x';
         }
+        return currentPlayerMark;
+    }  
+    
+    public char samemark() {
+    	 if (currentPlayerMark == 'x') {
+             currentPlayerMark = 'x';
+         }
+         else {
+             currentPlayerMark = 'o';
+    	
+    }
    return currentPlayerMark;
     }
 	public char winnermark(){
@@ -122,20 +133,25 @@ public class TicTacToe {
 		return result;
 	}
 	
-   
-    public boolean placeMark(int row, int col) {
+	public boolean blankslot (int row,int col ){
+		if (board[row][col] == '-')
+			return true;
+		else return false;
+	}
+    public  void placeMark(int row, int col) {
 		
-     
         if ((row >= 0) && (row < 3)) {
             if ((col >= 0) && (col < 3)) {
                 if (board[row][col] == '-') {
                     board[row][col] = currentPlayerMark;
-                    return true;
+                    
                 }
-                else return false;
+                else if (board[row][col] == 'x'|| board [row][col] == 'o')
+                	board[row] [col]= board [row][col];
+                	
+                  
             }
-        }
-		
-        return false;
-    }
+	 }
+     
+    } 
 }

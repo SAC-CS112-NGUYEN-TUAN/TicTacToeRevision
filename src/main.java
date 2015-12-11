@@ -4,10 +4,14 @@ public class main {
 	public static void main(String[] args) {
 		boolean playing = true;
 		TicTacToe game = new TicTacToe();
+		int ro;int cl;
+		boolean blank = true;
 	while (playing){
 		
+		ro = game.computerro(); cl = game.computercl();
+		blank = game.blankslot(ro, cl);
 			
-		game.placeMark(game.computerro(),game.computercl());
+		game.placeMark(ro,cl);
 			
 		game.printBoard();
 			
@@ -21,7 +25,7 @@ public class main {
 			   System.exit(0);playing = false;
 		}
 			
-			
+		if (blank == true)	
 		game.changePlayer();
 
 
