@@ -3,7 +3,9 @@ public class TicTacToe {
     private char[][] board; 
     private char currentPlayerMark;
 	private static int cl,ro;		
-    public TicTacToe() {
+	private static char result;
+	
+	public TicTacToe() {
         board = new char[3][3];
         currentPlayerMark = 'x';
         initializeBoard();
@@ -112,7 +114,7 @@ public class TicTacToe {
    return currentPlayerMark;
     }
 	public char winnermark(){
-		char result;
+		
 		if (changePlayer() =='x'){
 			result = 'o';
 		}
